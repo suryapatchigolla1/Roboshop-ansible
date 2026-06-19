@@ -1,6 +1,6 @@
 - name: Configurure the roboshop repo
   become: true
-  hosts: frontend-dev
+  hosts: frontend
   roles:
     - frontend
 
