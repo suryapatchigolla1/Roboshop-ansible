@@ -1,12 +1,8 @@
 - name: Disable default nginx module
   ansible.builtin.shell: dnf module disable nginx -y
   
-- name: Enable nginx 1.24 module
-  ansible.builtin.dnf: 
-    name: nginx
-    state: present
-    module_enabled: 
-      - nginx:1.24
+- name: enable default nginx module
+  ansible.builtin.shell: dnf module enable nginx:1.24 -y
 
 - name: Install nginx
   ansible.builtin.package:
