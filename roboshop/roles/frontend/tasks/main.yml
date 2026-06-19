@@ -19,5 +19,4 @@
     name: nginx
     state: started
     enabled: true
-    state: started
 

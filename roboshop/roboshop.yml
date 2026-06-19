@@ -1,0 +1,9 @@
+- name: Configurure the roboshop repo
+  become: true
+  hosts: frontend
+  roles:
+    - frontend
+
+  # ansible.builtin.template:
+  #   src: roboshop.conf.j2
+  #   dest: /etc/nginx/default.d/roboshop.conf
