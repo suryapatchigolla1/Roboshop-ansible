@@ -20,6 +20,11 @@
     path: /usr/share/nginx/html
     state: absent       
 
+- name: Preparing Nginx Directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: directory
+
 - name: Download the frontend content
   ansible.builtin.unarchive:
     src: "{{ url }}"
