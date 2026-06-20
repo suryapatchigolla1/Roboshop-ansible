@@ -15,6 +15,17 @@
     enabled: true
     state: started
 
+- name: Download the frontend content
+  ansible.builtin.unarchive:
+    src: "{{ url }}"
+    dest: /tmp/
+    remote_src: yes    
+
+- name: Cleanup the default nginx content
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent    
+
 - name: configuring the hostname
   ansible.builtin.shell: hostnamectl set-hostname frontend-{{ env }}
 
