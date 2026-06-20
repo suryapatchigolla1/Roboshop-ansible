@@ -13,3 +13,6 @@
     name: mongod
     enabled: true
     state: restarted
+
+- name: configuring the hostname
+  ansible.builtin.shell: hostnamectl set-hostname {{ component }}-{{ env }}    
