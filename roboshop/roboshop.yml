@@ -1,8 +1,8 @@
 - name: Configurure the roboshop repo
   become: true
-  hosts: frontend
+  hosts: {{ component }}
   roles:
-    - frontend
+    - {{ component }}
 
   # ansible.builtin.template:
   #   src: roboshop.conf.j2

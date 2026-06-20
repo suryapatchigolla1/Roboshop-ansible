@@ -1,2 +1,5 @@
 [frontend]
-frontend.robo60.online
+frontend-dev.robo60.online
+
+[mongodb]
+mongodb-dev.robo60.online
