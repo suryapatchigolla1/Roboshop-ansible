@@ -18,7 +18,7 @@
 - name: Download the frontend content
   ansible.builtin.unarchive:
     src: "{{ url }}"
-    dest: /tmp/
+    dest: /usr/share/nginx/html
     remote_src: yes    
 
 - name: Cleanup the default nginx content
