@@ -1,8 +1,8 @@
 - name: Disable default "{{ packageName }}" module
-  ansible.builtin.shell: dnf module disable "{{ packageName }}"-y
+  ansible.builtin.shell: dnf module disable "{{ packageName }}" -y
   
 - name: enable default "{{ packageName }}" module
-  ansible.builtin.shell: dnf module enable "{{ packageName }}":1.24 -y
+  ansible.builtin.shell: dnf module enable "{{ packageName }}" :1.24 -y
 
 - name: Install "{{ packageName }}"
   ansible.builtin.package:
@@ -11,18 +11,18 @@
 
 - name: Cleanup the default "{{ packageName }}" content
   ansible.builtin.file:
-    path: /usr/share/{{ packageName }}/html
+    path: /usr/share/"{{ packageName }}" /html
     state: absent       
 
-- name: Preparing "{{ packageName }}"Directory
+- name: Preparing "{{ packageName }}" Directory
   ansible.builtin.file:
-    path: /usr/share/{{ packageName }}/html
+    path: /usr/share/"{{ packageName }}" /html
     state: directory
 
 - name: Download the frontend content
   ansible.builtin.unarchive:
     src: "{{ url }}"
-    dest: /usr/share/{{ packageName }}/html
+    dest: /usr/share/"{{ packageName }}" / html
     remote_src: yes    
 
 - name: Start "{{ packageName }}" service
