@@ -9,12 +9,6 @@
     name: nginx
     state: present
 
-- name: Start nginx service
-  ansible.builtin.service:
-    name: nginx
-    enabled: true
-    state: started
-
 - name: Cleanup the default nginx content
   ansible.builtin.file:
     path: /usr/share/nginx/html
@@ -30,6 +24,12 @@
     src: "{{ url }}"
     dest: /usr/share/nginx/html
     remote_src: yes    
+
+- name: Start nginx service
+  ansible.builtin.service:
+    name: nginx
+    enabled: true
+    state: restarted
 
 - name: configuring the hostname
   ansible.builtin.shell: hostnamectl set-hostname frontend-{{ env }}
