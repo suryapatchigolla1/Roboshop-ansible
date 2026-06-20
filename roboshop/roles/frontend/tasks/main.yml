@@ -22,7 +22,7 @@
 - name: Download the frontend content
   ansible.builtin.unarchive:
     src: "{{ url }}"
-    dest: /usr/share/"{{ packageName }}" / html
+    dest: /usr/share/"{{ packageName }}" /html
     remote_src: yes    
 
 - name: Start "{{ packageName }}" service
