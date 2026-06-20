@@ -26,8 +26,6 @@
     dest: /usr/share/nginx/html
     remote_src: yes    
 
- 
-
 - name: configuring the hostname
   ansible.builtin.shell: hostnamectl set-hostname frontend-{{ env }}
 
